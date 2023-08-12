@@ -34,7 +34,7 @@
             this.btnsalvar = new System.Windows.Forms.Button();
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbuf = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtbairro = new System.Windows.Forms.TextBox();
@@ -61,16 +61,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabclientes = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabClientes = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabelacliente = new System.Windows.Forms.DataGridView();
             this.btnpesquisar = new System.Windows.Forms.Button();
             this.txtpesquisa = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabclientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabClientes.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelacliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +129,7 @@
             this.btnexcluir.TabIndex = 4;
             this.btnexcluir.Text = "EXCLUIR";
             this.btnexcluir.UseVisualStyleBackColor = false;
+            this.btnexcluir.Click += new System.EventHandler(this.btnexcluir_Click);
             // 
             // btneditar
             // 
@@ -140,43 +141,44 @@
             this.btneditar.TabIndex = 5;
             this.btneditar.Text = "EDITAR";
             this.btneditar.UseVisualStyleBackColor = false;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
             // 
-            // tabPage2
+            // tabPage1
             // 
-            this.tabPage2.Controls.Add(this.cbuf);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.txtbairro);
-            this.tabPage2.Controls.Add(this.txtcidade);
-            this.tabPage2.Controls.Add(this.txtnumero);
-            this.tabPage2.Controls.Add(this.txtendereco);
-            this.tabPage2.Controls.Add(this.txtemail);
-            this.tabPage2.Controls.Add(this.txtnome);
-            this.tabPage2.Controls.Add(this.txtcodigo);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.txtcep);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.txtcelular);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.txttelefone);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.txtcpf);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.txtrg);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(929, 319);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Dados Pessoais";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            this.tabPage1.Controls.Add(this.cbuf);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.txtbairro);
+            this.tabPage1.Controls.Add(this.txtcidade);
+            this.tabPage1.Controls.Add(this.txtnumero);
+            this.tabPage1.Controls.Add(this.txtendereco);
+            this.tabPage1.Controls.Add(this.txtemail);
+            this.tabPage1.Controls.Add(this.txtnome);
+            this.tabPage1.Controls.Add(this.txtcodigo);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.txtcep);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.txtcelular);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.txttelefone);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtcpf);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.txtrg);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(929, 319);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Dados Pessoais";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // cbuf
             // 
@@ -411,29 +413,29 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo:";
             // 
-            // tabclientes
+            // tabClientes
             // 
-            this.tabclientes.Controls.Add(this.tabPage2);
-            this.tabclientes.Controls.Add(this.tabPage1);
-            this.tabclientes.Location = new System.Drawing.Point(1, 104);
-            this.tabclientes.Name = "tabclientes";
-            this.tabclientes.SelectedIndex = 0;
-            this.tabclientes.Size = new System.Drawing.Size(937, 345);
-            this.tabclientes.TabIndex = 1;
+            this.tabClientes.Controls.Add(this.tabPage1);
+            this.tabClientes.Controls.Add(this.tabPage2);
+            this.tabClientes.Location = new System.Drawing.Point(1, 104);
+            this.tabClientes.Name = "tabClientes";
+            this.tabClientes.SelectedIndex = 0;
+            this.tabClientes.Size = new System.Drawing.Size(937, 345);
+            this.tabClientes.TabIndex = 1;
             // 
-            // tabPage1
+            // tabPage2
             // 
-            this.tabPage1.Controls.Add(this.tabelacliente);
-            this.tabPage1.Controls.Add(this.btnpesquisar);
-            this.tabPage1.Controls.Add(this.txtpesquisa);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(929, 319);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Consultas";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.tabelacliente);
+            this.tabPage2.Controls.Add(this.btnpesquisar);
+            this.tabPage2.Controls.Add(this.txtpesquisa);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(929, 319);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Consultas";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabelacliente
             // 
@@ -457,6 +459,7 @@
             this.btnpesquisar.TabIndex = 6;
             this.btnpesquisar.Text = "Pesquisar";
             this.btnpesquisar.UseVisualStyleBackColor = false;
+            this.btnpesquisar.Click += new System.EventHandler(this.btnpesquisar_Click);
             // 
             // txtpesquisa
             // 
@@ -464,6 +467,8 @@
             this.txtpesquisa.Name = "txtpesquisa";
             this.txtpesquisa.Size = new System.Drawing.Size(217, 20);
             this.txtpesquisa.TabIndex = 5;
+            this.txtpesquisa.TextChanged += new System.EventHandler(this.txtpesquisa_TextChanged);
+            this.txtpesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpesquisa_KeyPress);
             // 
             // label15
             // 
@@ -484,7 +489,7 @@
             this.Controls.Add(this.btnexcluir);
             this.Controls.Add(this.btnsalvar);
             this.Controls.Add(this.btnnovo);
-            this.Controls.Add(this.tabclientes);
+            this.Controls.Add(this.tabClientes);
             this.Controls.Add(this.panel1);
             this.Name = "Frmclientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -492,11 +497,11 @@
             this.Load += new System.EventHandler(this.Frmclientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabclientes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabClientes.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelacliente)).EndInit();
             this.ResumeLayout(false);
 
@@ -510,7 +515,7 @@
         private System.Windows.Forms.Button btnsalvar;
         private System.Windows.Forms.Button btnexcluir;
         private System.Windows.Forms.Button btneditar;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox cbuf;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtbairro;
@@ -537,8 +542,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabControl tabclientes;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabClientes;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView tabelacliente;
         private System.Windows.Forms.Button btnpesquisar;
         private System.Windows.Forms.TextBox txtpesquisa;

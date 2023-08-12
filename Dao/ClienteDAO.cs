@@ -54,6 +54,7 @@ namespace ControleDeVendasForm.Dao
                 executacmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente cadastrado com sucesso");
+                conexao.Close();
 
             } 
             catch (Exception erro) 
@@ -93,6 +94,7 @@ namespace ControleDeVendasForm.Dao
                 executacmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente alterado com sucesso");
+                conexao.Close();
 
             }
             catch (Exception erro)
@@ -119,6 +121,7 @@ namespace ControleDeVendasForm.Dao
                 executacmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente excluido com sucesso");
+                conexao.Close();
 
             }
             catch (Exception erro)
@@ -141,6 +144,7 @@ namespace ControleDeVendasForm.Dao
                 //3 criar o MysqlDataAdpter para preencher o DataTable
                 MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
                 da.Fill(tabelaCliente); //fill=preencher
+                conexao.Close();
 
                 return tabelaCliente;
 
@@ -153,5 +157,70 @@ namespace ControleDeVendasForm.Dao
             }
         }
         #endregion
+        #region BuscasClientePorNome
+        public DataTable BuscarClPorNome(string nome) //usar o DataTable quando trabalhar com lista no Sql
+        {
+            try
+            {   //1- Criar o DataTable e o comando sql
+                DataTable tabelaCliente = new DataTable();
+                string sql = "select * from tb_clientes where nome = @nome";
+
+                //2- Organizar o comando sql e executar
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                //Onde tem @nome substitui pela variavel nome
+                executacmd.Parameters.AddWithValue("@nome", nome);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                //3 criar o MysqlDataAdpter para preencher o DataTable
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabelaCliente); //fill=preencher
+                conexao.Close();
+
+                return tabelaCliente;
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro: " + erro);
+                return null;
+            }
+        }
+
+        #endregion
+        #region ListarClPorNome
+        public DataTable ListarClPorNome(string nome) //usar o DataTable quando trabalhar com lista no Sql
+        {
+            try
+            {   //1- Criar o DataTable e o comando sql
+                DataTable tabelaCliente = new DataTable();
+                string sql = "select * from tb_clientes where nome like @nome";
+
+                //2- Organizar o comando sql e executar
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                //Onde tem @nome substitui pela variavel nome
+                executacmd.Parameters.AddWithValue("@nome", nome);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                //3 criar o MysqlDataAdpter para preencher o DataTable
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabelaCliente); //fill=preencher
+                conexao.Close();
+
+                return tabelaCliente;
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro: " + erro);
+                return null;
+            }
+        }
+
+        #endregion
+
     }
 }

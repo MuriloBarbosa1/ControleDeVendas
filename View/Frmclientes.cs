@@ -18,7 +18,10 @@ namespace ControleDeVendasForm.View
         {
             InitializeComponent();
         }
+        private void txtpesquisa_TextChanged(object sender, EventArgs e)
+        {
 
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -68,6 +71,8 @@ namespace ControleDeVendasForm.View
 
             ClienteDAO dao = new ClienteDAO();
             dao.cadastrarCliente(obj);
+
+            tabelacliente.DataSource = dao.listarCliente();
         }
 
         private void tabelacliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,6 +92,76 @@ namespace ControleDeVendasForm.View
             txtcidade.Text = tabelacliente.CurrentRow.Cells[12].Value.ToString();
             cbuf.Text = tabelacliente.CurrentRow.Cells[13].Value.ToString();
 
+
+            tabClientes.SelectedTab = tabPage1;
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            //botão excluir
+            Cliente obj = new Cliente();
+
+            obj.Codigo = int.Parse(txtcodigo.Text);
+
+            ClienteDAO dao = new ClienteDAO(); 
+            dao.excluirCliente(obj);
+
+            tabelacliente.DataSource = dao.listarCliente();
+        }
+
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            //1 PASSO - RECEBER OS DADOS DENTRO OBJETO CLIENTE
+            Cliente obj = new Cliente();
+            obj.Nome = txtnome.Text;
+            obj.Rg = txtrg.Text;
+            obj.Cpf = txtcpf.Text;
+            obj.Email = txtemail.Text;
+            obj.Telefone = txttelefone.Text;
+            obj.Celular = txtcelular.Text;
+            obj.Cep = txtcep.Text;
+            obj.Endereco = txtendereco.Text;
+            obj.Cidade = txtcidade.Text;
+            obj.Estado = cbuf.Text;
+            obj.Bairro = txtbairro.Text;
+            obj.Numero = int.Parse(txtnumero.Text);
+            obj.Codigo = int.Parse(txtcodigo.Text);
+
+            //2 PASSO - CRIAR UM OBJETO DA CLASSE CLIENTEDAO E CHAMAR O METODO  ALTERARCLIENTE
+
+            ClienteDAO dao = new ClienteDAO();
+            dao.alterarCliente(obj);
+
+            tabelacliente.DataSource = dao.listarCliente();
+        }
+
+        private void btnpesquisar_Click(object sender, EventArgs e)
+        {
+            //Botão pesquisar
+
+            string nome = txtpesquisa.Text;
+
+            ClienteDAO dao = new ClienteDAO();
+            tabelacliente.DataSource = dao.BuscarClPorNome(nome);
+
+            //Rows = linhas Count= contagem 
+            if(tabelacliente.Rows.Count == 0)
+            {
+                tabelacliente.DataSource = dao.listarCliente();
+            }
+        }
+
+        private void txtpesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string nome = "%" + txtpesquisa.Text + "%";
+            ClienteDAO dao = new ClienteDAO();
+            tabelacliente.DataSource = dao.ListarClPorNome(nome);
+
+            //Rows = linhas Count= contagem 
+            if (tabelacliente.Rows.Count == 0)
+            {
+                tabelacliente.DataSource = dao.listarCliente();
+            }
         }
     }
 }
