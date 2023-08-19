@@ -72,6 +72,7 @@ namespace ControleDeVendasForm.View
             ClienteDAO dao = new ClienteDAO();
             dao.cadastrarCliente(obj);
 
+            //Salva e lista os novos clientes
             tabelacliente.DataSource = dao.listarCliente();
         }
 
@@ -162,6 +163,38 @@ namespace ControleDeVendasForm.View
             {
                 tabelacliente.DataSource = dao.listarCliente();
             }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e) //Buscar o cep pela api
+        {
+            try
+            {
+                string cep=txtcep.Text;
+                string xml = "https://viacep.com.br/ws/"+cep+"/xml/";
+
+                DataSet dados = new DataSet(); //Recebe e faz a requisição da Api
+
+                dados.ReadXml(xml);//ler a Xml
+
+                //Completar os campos com as informações da api
+                txtendereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString(); //Rows = linhas
+                txtcidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtbairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                cbuf.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Cep não enconstrado");
+            }
+        }
+
+        private void btnnovo_Click(object sender, EventArgs e)
+        {
+            /*Auxiliar ax = new Auxiliar();
+            ax.LimparTela(this);*/
+            new Auxiliar().LimparTela(this); //This: Especifica qual tela limpar(essa)
         }
     }
 }

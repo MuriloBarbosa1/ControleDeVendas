@@ -137,6 +137,7 @@ namespace ControleDeVendasForm.Dao
             {   //1- Criar o DataTable e o comando sql
                 DataTable tabelaCliente = new DataTable();
                 string sql = "select * from tb_clientes";
+                
                 //2- Organizar o comando sql e executar
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
