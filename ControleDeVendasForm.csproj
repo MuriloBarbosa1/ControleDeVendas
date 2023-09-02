@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Conexao\Connection.cs" />
     <Compile Include="Dao\ClienteDAO.cs" />
+    <Compile Include="Dao\FuncionarioDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,7 @@
     </Compile>
     <Compile Include="Model\Auxiliar.cs" />
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Frmclientes.cs">
@@ -99,6 +101,12 @@
     </Compile>
     <Compile Include="View\Frmclientes.Designer.cs">
       <DependentUpon>Frmclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frmfuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frmfuncionarios.Designer.cs">
+      <DependentUpon>Frmfuncionarios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="View\Frmclientes.resx">
       <DependentUpon>Frmclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frmfuncionarios.resx">
+      <DependentUpon>Frmfuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

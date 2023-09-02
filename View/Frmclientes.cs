@@ -62,7 +62,7 @@ namespace ControleDeVendasForm.View
             obj.Cep=txtcep.Text;
             obj.Endereco=txtendereco.Text;
             obj.Cidade=txtcidade.Text;
-            obj.Estado = cbuf.Text;
+            obj.Estado = cbuf.SelectedItem.ToString();
             obj.Bairro=txtbairro.Text;
             obj.Numero = int.Parse(txtnumero.Text);
             
@@ -195,6 +195,16 @@ namespace ControleDeVendasForm.View
             /*Auxiliar ax = new Auxiliar();
             ax.LimparTela(this);*/
             new Auxiliar().LimparTela(this); //This: Especifica qual tela limpar(essa)
+        }
+
+        private void cbuf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

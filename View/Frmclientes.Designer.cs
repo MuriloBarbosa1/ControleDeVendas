@@ -35,6 +35,7 @@
             this.btnexcluir = new System.Windows.Forms.Button();
             this.btneditar = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.cbuf = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtbairro = new System.Windows.Forms.TextBox();
@@ -67,7 +68,6 @@
             this.btnpesquisar = new System.Windows.Forms.Button();
             this.txtpesquisa = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabClientes.SuspendLayout();
@@ -84,6 +84,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(937, 98);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -183,6 +184,18 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscar.Location = new System.Drawing.Point(532, 189);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(84, 32);
+            this.btnbuscar.TabIndex = 27;
+            this.btnbuscar.Text = "Pesquisar";
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
             // cbuf
             // 
             this.cbuf.FormattingEnabled = true;
@@ -194,6 +207,7 @@
             this.cbuf.Name = "cbuf";
             this.cbuf.Size = new System.Drawing.Size(121, 21);
             this.cbuf.TabIndex = 26;
+            this.cbuf.SelectedIndexChanged += new System.EventHandler(this.cbuf_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -483,18 +497,6 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "Nome:";
             // 
-            // btnbuscar
-            // 
-            this.btnbuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscar.Location = new System.Drawing.Point(532, 189);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(84, 32);
-            this.btnbuscar.TabIndex = 27;
-            this.btnbuscar.Text = "Pesquisar";
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
             // Frmclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,7 +510,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Frmclientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Cadastro de clientes";
             this.Load += new System.EventHandler(this.Frmclientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

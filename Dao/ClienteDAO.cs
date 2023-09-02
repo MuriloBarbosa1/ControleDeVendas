@@ -17,7 +17,7 @@ namespace ControleDeVendasForm.Dao
     public class ClienteDAO
     {
         private MySqlConnection conexao;
-        public ClienteDAO() 
+        public ClienteDAO() //construtor para fazer a conexao
         {
             this.conexao = new Connection().GetConnection();
         }
