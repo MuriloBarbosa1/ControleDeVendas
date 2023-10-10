@@ -15,5 +15,10 @@ namespace ControleDeVendasForm.Conexao
             string conexao = ConfigurationManager.ConnectionStrings["bdvendas"].ConnectionString;
             return new MySqlConnection(conexao);
         }
+
+        internal MySqlConnection Getconnection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

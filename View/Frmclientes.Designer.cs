@@ -367,7 +367,7 @@
             // txtcpf
             // 
             this.txtcpf.Location = new System.Drawing.Point(424, 30);
-            this.txtcpf.Mask = "###.###.###-##";
+            this.txtcpf.Mask = "###,###,###-##";
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(102, 20);
             this.txtcpf.TabIndex = 9;
@@ -385,7 +385,7 @@
             // txtrg
             // 
             this.txtrg.Location = new System.Drawing.Point(89, 193);
-            this.txtrg.Mask = "##.###.###-#";
+            this.txtrg.Mask = "##,###,###-#";
             this.txtrg.Name = "txtrg";
             this.txtrg.Size = new System.Drawing.Size(94, 20);
             this.txtrg.TabIndex = 7;
@@ -453,6 +453,7 @@
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Consultas";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click_1);
             // 
             // tabelacliente
             // 

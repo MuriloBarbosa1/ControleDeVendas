@@ -206,5 +206,9 @@ namespace ControleDeVendasForm.View
         {
 
         }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+        }
     }
 }

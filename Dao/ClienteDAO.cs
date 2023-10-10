@@ -153,7 +153,7 @@ namespace ControleDeVendasForm.Dao
             catch (Exception erro)
             {
 
-                MessageBox.Show("Erro: " + erro);
+                MessageBox.Show("Erro na listagem: " + erro);
                 return null;
             }
         }
@@ -190,7 +190,7 @@ namespace ControleDeVendasForm.Dao
         }
 
         #endregion
-        #region ListarClPorNome
+        #region ListarClientePorNome
         public DataTable ListarClPorNome(string nome) //usar o DataTable quando trabalhar com lista no Sql
         {
             try
