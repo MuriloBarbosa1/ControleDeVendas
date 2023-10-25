@@ -177,9 +177,9 @@ namespace ControleDeVendasForm.Dao
                 return null;
             }
         }
-            #endregion
+        #endregion
         #region Metodo Listar funcionarios
-            public DataTable ListarFuncionarios()
+        public DataTable ListarFuncionarios()
         {
             try
             {

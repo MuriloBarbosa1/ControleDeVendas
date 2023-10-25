@@ -186,7 +186,7 @@
             // 
             // btnbuscar
             // 
-            this.btnbuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnbuscar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnbuscar.Location = new System.Drawing.Point(532, 189);
             this.btnbuscar.Name = "btnbuscar";

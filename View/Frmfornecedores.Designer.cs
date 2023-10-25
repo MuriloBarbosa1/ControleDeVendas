@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -142,7 +142,7 @@
             // 
             // btncep
             // 
-            this.btncep.BackColor = System.Drawing.Color.Khaki;
+            this.btncep.BackColor = System.Drawing.SystemColors.Highlight;
             this.btncep.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncep.Location = new System.Drawing.Point(499, 61);
             this.btncep.Name = "btncep";
@@ -411,7 +411,7 @@
             // 
             // btnpesquisar
             // 
-            this.btnpesquisar.BackColor = System.Drawing.Color.Khaki;
+            this.btnpesquisar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnpesquisar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpesquisar.Location = new System.Drawing.Point(327, 11);
             this.btnpesquisar.Name = "btnpesquisar";
@@ -443,7 +443,6 @@
             // 
             this.tabelafornecedor.AllowUserToAddRows = false;
             this.tabelafornecedor.AllowUserToDeleteRows = false;
-            this.tabelafornecedor.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.tabelafornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelafornecedor.Location = new System.Drawing.Point(7, 52);
             this.tabelafornecedor.Name = "tabelafornecedor";
@@ -454,7 +453,7 @@
             // 
             // btneditar
             // 
-            this.btneditar.BackColor = System.Drawing.Color.Khaki;
+            this.btneditar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btneditar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneditar.Location = new System.Drawing.Point(695, 389);
             this.btneditar.Name = "btneditar";
@@ -466,7 +465,7 @@
             // 
             // btnexcluir
             // 
-            this.btnexcluir.BackColor = System.Drawing.Color.Khaki;
+            this.btnexcluir.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnexcluir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexcluir.Location = new System.Drawing.Point(510, 389);
             this.btnexcluir.Name = "btnexcluir";
@@ -478,7 +477,7 @@
             // 
             // btnsalvar
             // 
-            this.btnsalvar.BackColor = System.Drawing.Color.Khaki;
+            this.btnsalvar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnsalvar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsalvar.Location = new System.Drawing.Point(324, 389);
             this.btnsalvar.Name = "btnsalvar";
@@ -490,7 +489,7 @@
             // 
             // btnnovo
             // 
-            this.btnnovo.BackColor = System.Drawing.Color.Khaki;
+            this.btnnovo.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnnovo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnovo.Location = new System.Drawing.Point(141, 389);
             this.btnnovo.Name = "btnnovo";

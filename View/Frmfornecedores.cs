@@ -58,7 +58,7 @@ namespace ControleDeVendasForm.View
             catch (Exception)
             {
 
-                MessageBox.Show("Endereço não encontrado, por favor dogote manualmente");
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente");
             }
         }
 
@@ -86,6 +86,8 @@ namespace ControleDeVendasForm.View
 
             FornecedorDAO dao = new FornecedorDAO();
             dao.cadastrarFornecedor(obj);
+
+            new Auxiliar().LimparTela(this);
 
             tabelafornecedor.DataSource = dao.listarFornecedores();
         }

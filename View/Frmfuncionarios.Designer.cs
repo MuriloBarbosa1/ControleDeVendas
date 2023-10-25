@@ -84,7 +84,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -514,7 +514,7 @@
             // 
             // btnpesquisar
             // 
-            this.btnpesquisar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnpesquisar.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnpesquisar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpesquisar.Location = new System.Drawing.Point(327, 11);
             this.btnpesquisar.Name = "btnpesquisar";
@@ -546,7 +546,6 @@
             // 
             this.tabelafuncionario.AllowUserToAddRows = false;
             this.tabelafuncionario.AllowUserToDeleteRows = false;
-            this.tabelafuncionario.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tabelafuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelafuncionario.Location = new System.Drawing.Point(7, 64);
             this.tabelafuncionario.Name = "tabelafuncionario";

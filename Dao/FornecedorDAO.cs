@@ -89,7 +89,7 @@ namespace ControleDeVendasForm.Dao
             try
             {
                 DataTable tabelaFornecedor = new DataTable();
-                string sql = "select * from tb_fornecedores where nome like @nome";
+                string sql = "select * from tb_fornecedores where nome=@nome";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", nome);
@@ -110,7 +110,7 @@ namespace ControleDeVendasForm.Dao
             }
         }
         #endregion
-        #region Metodo Listar Fornecedores por nome
+        #region Metodo Listar Fornecedores por apx
         public DataTable listarFornecedoresPorNome(string nome)
         {
             try
