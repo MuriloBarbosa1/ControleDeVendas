@@ -210,5 +210,10 @@ namespace ControleDeVendasForm.View
         private void tabPage2_Click_1(object sender, EventArgs e)
         {
         }
+
+        private void txtcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

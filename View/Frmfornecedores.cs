@@ -186,5 +186,10 @@ namespace ControleDeVendasForm.View
                 tabelafornecedor.DataSource = dao.listarFornecedores();
             }
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

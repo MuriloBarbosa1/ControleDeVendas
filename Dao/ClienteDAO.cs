@@ -17,6 +17,9 @@ namespace ControleDeVendasForm.Dao
     public class ClienteDAO
     {
         private MySqlConnection conexao;
+
+        public object MysqlDatareader { get; private set; }
+
         public ClienteDAO() //construtor para fazer a conexao
         {
             this.conexao = new Connection().GetConnection();
@@ -27,7 +30,7 @@ namespace ControleDeVendasForm.Dao
         #region CadastrarCliente
         public void cadastrarCliente(Cliente obj)
         {
-            try 
+            try
             {
                 //1- Definir o comando sql - insert into
                 string sql = @"insert into tb_clientes(nome,rg,cpf,email,telefone,celular,cep,endereco,numero,complemento,bairro,cidade,estado)
@@ -56,11 +59,11 @@ namespace ControleDeVendasForm.Dao
                 MessageBox.Show("Cliente cadastrado com sucesso");
                 conexao.Close();
 
-            } 
-            catch (Exception erro) 
+            }
+            catch (Exception erro)
             {
                 MessageBox.Show("Error: " + erro);
-            } 
+            }
         }
         #endregion
         #region AlterarCliente
@@ -71,7 +74,7 @@ namespace ControleDeVendasForm.Dao
                 //1- Definir o comando sql - insert into
                 string sql = @"update tb_clientes set nome=@nome,rg=@rg,cpf=@cpf,email=@email,telefone=@telefone,celular=@celular,cep=@cep,
                 endereco=@endereco,numero=@numero,complemento=@complemento,bairro=@bairro,cidade=@cidade,estado=@estado where id=@id";
-                                 
+
                 //2- Organizar o comando sql
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", obj.Nome);
@@ -137,7 +140,7 @@ namespace ControleDeVendasForm.Dao
             {   //1- Criar o DataTable e o comando sql
                 DataTable tabelaCliente = new DataTable();
                 string sql = "select * from tb_clientes";
-                
+
                 //2- Organizar o comando sql e executar
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 conexao.Open();
@@ -221,6 +224,47 @@ namespace ControleDeVendasForm.Dao
             }
         }
 
+        #endregion
+        #region Retornar Cliente por Cpf
+        public Cliente RetornarClientePorCpf(string cpf)
+        {
+            try
+            {
+                Cliente obj = new Cliente();
+                string sql = @"select * from tb_clientes where cpf= @cpf";
+
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@cpf", cpf);
+
+                conexao.Open(); 
+
+                MySqlDataReader rs = executacmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    obj.Codigo = rs.GetInt32("id");
+                    obj.Nome = rs.GetString("nome");
+                    conexao.Close();
+
+                    return obj;
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado");
+                    conexao.Close();
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Erro na buscar " + e);
+                conexao.Close();
+                return null;
+            }
+
+        }
         #endregion
 
     }

@@ -192,6 +192,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(64, 21);
             this.txtcodigo.TabIndex = 1;
+            this.txtcodigo.TextChanged += new System.EventHandler(this.txtcodigo_TextChanged);
             // 
             // label2
             // 
@@ -343,7 +344,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtpreco;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtdescricao;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtcodigo;
@@ -360,5 +360,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbfornecedor;
         private System.Windows.Forms.TextBox txtqtdestoque;
+        private System.Windows.Forms.Label label13;
     }
 }

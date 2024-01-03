@@ -66,7 +66,7 @@ namespace ControleDeVendasForm.View
             obj.Nivel_acesso = cbnivel.SelectedItem.ToString();
             obj.Telefone = txttelefone.Text;
             obj.Celular = txtcelular.Text;
-            obj.Cep = txtcep.Text; 
+            obj.Cep = txtcep.Text;
             obj.Endereco = txtendereco.Text;
             obj.Cidade = txtcidade.Text;
             obj.Estado = cbuf.SelectedItem.ToString();
@@ -195,6 +195,11 @@ namespace ControleDeVendasForm.View
 
                 MessageBox.Show("Cep não enconstrado");
             }
+        }
+
+        private void cbnivel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

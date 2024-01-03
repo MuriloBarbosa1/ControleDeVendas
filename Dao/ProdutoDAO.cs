@@ -169,7 +169,7 @@ namespace ControleDeVendasForm.Dao
 
         }
         #endregion
-        #region Buscar Produtos por Apx    
+        #region Metodo Buscar Produtos por Apx    
         public DataTable BuscarProdutoPorApx(string nome)
         {
             try
@@ -203,7 +203,104 @@ namespace ControleDeVendasForm.Dao
                 return null;
             }
         }
+        #endregion 
+        #region Metodo Retornar Produto por codigo
+        public Produto RetornarProdutoPorCodigo(Int64 id)
+        {
+            try
+            {
+                string sql = @"select * from tb_produtos where id = @id";
+
+                MySqlCommand executecmd = new MySqlCommand(sql, conexao);
+                executecmd.Parameters.AddWithValue("@id", id);
+                conexao.Open();
+
+                MySqlDataReader rs = executecmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    Produto p = new Produto();
+                    p.id = rs.GetInt32("id");
+                    p.descricao = rs.GetString("descricao");
+                    p.preco = rs.GetDecimal("preco");
+                    conexao.Close();
+                    return p;
+                }
+                else
+                {
+                    MessageBox.Show("Produto não enconstrado");
+                    conexao.Close();
+                    return null;
+                }
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Erro na busca: " + e);
+                conexao.Close();
+                return null;
+            }
+        }
         #endregion
-        //buscar por apx
+        #region Metodo Baixa no estoque
+        public void BaixaNoEstoque(int qtdestoque, int idproduto)
+        {
+            try
+            {
+                string sql = @"update tb_produtos set qtd_estoque = @qtd where id = @id";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                  
+                executacmd.Parameters.AddWithValue("@qtd", qtdestoque);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                 
+                conexao.Close();
+            }
+            catch (Exception e )
+            {
+
+                MessageBox.Show("Erro " + e);
+                conexao.Close();
+            }
+        }
+        #endregion
+        #region Metodo Retorna o Estoque atual
+        public int RetornaEstoqueAtual(int idProduto)
+        {
+            try
+            {
+                string sql = @"select qtd_estoque from tb_produtos where id =@id";
+                int qtd_estoque = 0;
+
+                MySqlCommand exeutacmd = new MySqlCommand (sql, conexao);
+                exeutacmd.Parameters.AddWithValue("@id", idProduto);
+
+                conexao.Open();
+
+                MySqlDataReader rs = exeutacmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    qtd_estoque = rs.GetInt32("qtd_estoque");
+                    conexao.Close();
+                }
+                return qtd_estoque;
+
+                
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("Erro" + e);
+                return 0;
+            }
+            
+        }
+
+        #endregion
+
     }
 }

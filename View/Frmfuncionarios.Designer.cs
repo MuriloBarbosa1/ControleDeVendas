@@ -188,6 +188,7 @@
             this.cbnivel.Name = "cbnivel";
             this.cbnivel.Size = new System.Drawing.Size(110, 23);
             this.cbnivel.TabIndex = 39;
+            this.cbnivel.SelectedIndexChanged += new System.EventHandler(this.cbnivel_SelectedIndexChanged);
             // 
             // txtnumero
             // 

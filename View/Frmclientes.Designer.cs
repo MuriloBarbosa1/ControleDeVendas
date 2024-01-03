@@ -371,6 +371,7 @@
             this.txtcpf.Name = "txtcpf";
             this.txtcpf.Size = new System.Drawing.Size(102, 20);
             this.txtcpf.TabIndex = 9;
+            this.txtcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcpf_MaskInputRejected);
             // 
             // label6
             // 

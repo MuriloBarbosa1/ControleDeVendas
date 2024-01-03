@@ -175,5 +175,10 @@ namespace ControleDeVendasForm.View
             ProdutoDAO dao = new ProdutoDAO();
            tabelaproduto.DataSource = dao.BuscarProdutoPorApx(nome);
         }
+
+        private void txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
